@@ -1,21 +1,16 @@
-function preload(){
-  // put preload code here
+var img;
+function setup(){
+  createCanvas(displayWidth, displayHeight, WEBGL);
+	img = loadImage("assets/DSCF9655.jpg");
 }
 
-function setup() {
-  // put setup code here
-  rectMode(CENTER);
-  noFill();
-  stroke(25);
-}
-
-function draw() {
-  // put drawing code here
-  translate(width/2, height/2);
-  background(120);
-  rect(width/2, heigh/2, 300, 300);
-}
-
-function mousePressed() {
-  if (mouseX)
+function draw(){
+  background(250);
+	textSize(24);
+		text('Shake me!', 100, 100);
+		//moving picture like a dice
+ 	texture(img);
+  rotateX(accelerationX * 0.03);
+  rotateY(accelerationY * 0.03);
+  box(100, 100, 100);
 }
